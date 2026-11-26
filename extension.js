@@ -1,6 +1,8 @@
 const vscode = require('vscode');
 const { execFile } = require('child_process');
 
+const IMAGE_TYPES_REGEX = /^(\"|')?\\s*(public\\.)?(png|tiff|jpeg|gif|bmp|heic|heif)\\s*(\"|')?$/i;
+
 /**
  * Checks whether the macOS clipboard currently holds image data.
  * @returns {Promise<boolean>}
@@ -15,7 +17,13 @@ function clipboardHasImage() {
         resolve(false);
         return;
       }
-      resolve(/PNGf|TIFF|JPEG|GIFf/i.test(stdout));
+      // `clipboard info` lists types like "«class PNGf»" or "'public.png'" — any image type means an image is present.
+      stdout
+        .split(', ')
+        .map((entry) => entry.trim())
+        .some((type) => IMAGE_TYPES_REGEX.test(type))
+        ? resolve(true)
+        : resolve(false);
     });
   });
 }
