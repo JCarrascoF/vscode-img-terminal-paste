@@ -1,0 +1,6 @@
+.gitignore
+.github/**
+AGENTS.md
+CONTRIBUTING.md
+*.vsix
+.DS_Store

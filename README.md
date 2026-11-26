@@ -29,7 +29,7 @@ No files are written to your repository, and no `.gitignore` changes are needed.
 ### From source (local symlink)
 
 ```bash
-git clone https://github.com/<your-username>/vscode-img-terminal-paste.git
+git clone https://github.com/JCarrascoF/vscode-img-terminal-paste.git
 ln -s "$(pwd)/vscode-img-terminal-paste" ~/.vscode/extensions/local.img-terminal-paste-0.1.0
 ```
 

@@ -1,0 +1,49 @@
+{
+  "name": "img-terminal-paste",
+  "displayName": "Img Terminal Paste",
+  "description": "In the VS Code integrated terminal on macOS, Cmd+V pastes text normally or forwards Ctrl+V when the clipboard contains an image.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "icon": "icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JCarrascoF/vscode-img-terminal-paste.git"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "terminal",
+    "paste",
+    "image",
+    "clipboard",
+    "macos",
+    "tui"
+  ],
+  "activationEvents": [
+    "onCommand:imgTerminalPaste.paste"
+  ],
+  "main": "./extension.js",
+  "scripts": {
+    "package": "npx --yes @vscode/vsce package"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "imgTerminalPaste.paste",
+        "title": "Img Terminal Paste: Paste in Terminal"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "imgTerminalPaste.paste",
+        "mac": "cmd+v",
+        "when": "terminalFocus && !terminalFindFocused"
+      }
+    ]
+  }
+}
