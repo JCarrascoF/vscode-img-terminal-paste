@@ -1,4 +1,8 @@
-# Img Terminal Paste
+<p align="center">
+  <img src="./icon.png" alt="Img Terminal Paste icon" width="128" height="128">
+</p>
+
+<h1 align="center">Img Terminal Paste</h1>
 
 Make `Cmd+V` work seamlessly for **both text and images** in the VS Code integrated terminal on macOS.
 
