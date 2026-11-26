@@ -4,6 +4,7 @@
   "description": "In the VS Code integrated terminal on macOS, Cmd+V pastes text normally or forwards Ctrl+V when the clipboard contains an image.",
   "version": "0.1.0",
   "publisher": "local",
+  "icon": "icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",
